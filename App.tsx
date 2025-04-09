@@ -16,6 +16,7 @@ import OtpScreen from './src/screens/OtpScreen';
 import HomePage from './src/screens/HomePageScreen';
 import RedirectScreen from './src/components/OtherScreens/RedirectScreen';
 import DrawerContent from './src/navigation/DrawerContent';
+import EnrollScreen from './src/screens/EnrollScreen';
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -44,7 +45,7 @@ const TABS = [
   },
   {
     name: 'Progress',
-    component: RedirectScreen,
+    component: EnrollScreen,
     icon: 'time-outline',
     iconFocused: 'time',
   },

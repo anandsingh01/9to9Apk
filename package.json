@@ -23,6 +23,7 @@
     "react-native-bootsplash": "^6.3.4",
     "react-native-gesture-handler": "^2.25.0",
     "react-native-linear-gradient": "^2.8.3",
+    "react-native-paper": "^5.13.1",
     "react-native-reanimated": "^3.17.2",
     "react-native-responsive-dimensions": "^3.1.1",
     "react-native-responsive-screen": "^1.4.2",

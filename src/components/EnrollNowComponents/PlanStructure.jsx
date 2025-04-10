@@ -10,29 +10,26 @@ import {
 } from 'react-native';
 import COLORS from '../../constants/color';
 
-const FeeStructureScreen = ({prevStep, nextStep}) => {
+const PlanStructure = ({nextStep, prevStep}) => {
+  // Registration features with their respective colors
+  const registrationFeatures = [
+    {text: 'Pay the $100 registration fee now', color: '#FFD700'},
+    {text: "First month's tuition due at orientation", color: '#8A7CFF'},
+    {text: 'Immediate enrollment confirmation', color: '#FF7CFF'},
+    {text: "Secure your child's spot in class", color: '#7CFF7C'},
+  ];
+
   // Program features with their respective colors
-  const features = [
+  const programFeatures = [
     {text: 'All meals included', color: '#FFD700'},
     {text: 'Nap time supervision', color: '#8A7CFF'},
     {text: 'Weekly progress reports', color: '#FF7CFF'},
     {text: 'Comprehensive curriculum', color: '#7CFF7C'},
   ];
 
-  // Reusable program card component
-  const ProgramCard = () => (
-    <View style={styles.card}>
-      <Text style={styles.cardTitle}>Full - Time Program</Text>
-      <Text style={styles.cardDescription}>
-        Perfect for families seeking comprehensive weekday care
-      </Text>
-
-      <View style={styles.priceContainer}>
-        <Text style={styles.currencySymbol}>₹</Text>
-        <Text style={styles.price}>5000</Text>
-        <Text style={styles.perMonth}>/per month</Text>
-      </View>
-
+  // Reusable feature list component
+  const FeatureList = ({features}) => (
+    <>
       {features.map((feature, index) => (
         <View key={index} style={styles.featureRow}>
           <View style={[styles.featureIcon, {backgroundColor: feature.color}]}>
@@ -41,23 +38,48 @@ const FeeStructureScreen = ({prevStep, nextStep}) => {
           <Text style={styles.featureText}>{feature.text}</Text>
         </View>
       ))}
-    </View>
+    </>
   );
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContainer}>
         <View style={styles.content}>
-          <View style={styles.headerContainer}>
-            <Text style={styles.title}>Fee Structure</Text>
-            <Text style={styles.subtitle}>
-              Select a program that best suits your child's needs
-            </Text>
+          <Text style={styles.title}>Fee Structure</Text>
+          <Text style={styles.subtitle}>
+            Select a program that best suits your child's needs
+          </Text>
+
+          {/* Registration Fee Card */}
+          <View style={styles.registrationCard}>
+            <Text style={styles.cardTitle}>Pay Registration Fee Now</Text>
+            <FeatureList features={registrationFeatures} />
+            <TouchableOpacity style={styles.purpleButton}>
+              <Text style={styles.buttonText}>Pay $100 Registration Free</Text>
+            </TouchableOpacity>
           </View>
 
-          <ProgramCard />
-          <ProgramCard />
+          {/* Program Card */}
+          <View style={styles.programCard}>
+            <Text style={styles.cardTitle}>Full - Time Program</Text>
+            <Text style={styles.cardDescription}>
+              Perfect for families seeking comprehensive weekday care
+            </Text>
 
+            <View style={styles.priceContainer}>
+              <Text style={styles.currencySymbol}>₹</Text>
+              <Text style={styles.price}>5000</Text>
+              <Text style={styles.perMonth}>/per month</Text>
+            </View>
+
+            <FeatureList features={programFeatures} />
+
+            <TouchableOpacity style={styles.purpleButton}>
+              <Text style={styles.buttonText}>Select Plan</Text>
+            </TouchableOpacity>
+          </View>
+
+          {/* Navigation Buttons */}
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.previousButton} onPress={prevStep}>
               <Text style={styles.previousButtonText}>Previous</Text>
@@ -91,33 +113,40 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
-    fontWeight: '600',
-    lineHeight: 22,
-    marginBottom: 2,
+    fontWeight: 600,
+    marginBottom: 5,
     color: COLORS.black,
     fontFamily: 'Poppins-Bold',
   },
   subtitle: {
     fontSize: 12,
     fontWeight: 400,
-    color: COLORS.gray,
     fontFamily: 'Poppins-Regular',
+    color: COLORS.gray,
+    marginBottom: 20,
   },
-  card: {
+  registrationCard: {
     borderWidth: 1,
     borderColor: COLORS.border,
     borderRadius: 10,
     padding: 16,
-    marginBottom: 10,
+    marginBottom: 16,
+    backgroundColor: '#FFF0E5',
+  },
+  programCard: {
+    borderWidth: 1,
+    borderColor: COLORS.border,
+    borderRadius: 10,
+    padding: 16,
+    marginBottom: 16,
     backgroundColor: COLORS.white,
-    marginTop: 15,
   },
   cardTitle: {
     fontSize: 16,
-    fontFamily: 'Poppins-Bold',
-    fontWeight: 'bold',
+    fontWeight: 600,
     color: COLORS.black,
-    marginBottom: 4,
+    marginBottom: 12,
+    fontFamily: 'Poppins-Bold',
   },
   cardDescription: {
     fontSize: 12,
@@ -133,13 +162,13 @@ const styles = StyleSheet.create({
   },
   currencySymbol: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: 600,
     color: COLORS.black,
     fontFamily: 'Poppins-Bold',
   },
   price: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: 600,
     color: COLORS.black,
     fontFamily: 'Poppins-Bold',
   },
@@ -169,6 +198,19 @@ const styles = StyleSheet.create({
   featureText: {
     fontSize: 12,
     color: COLORS.black,
+    fontFamily: 'Poppins-Regular',
+  },
+  purpleButton: {
+    backgroundColor: COLORS.primary,
+    borderRadius: 25,
+    paddingVertical: 10,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  buttonText: {
+    color: COLORS.white,
+    fontWeight: '500',
+    fontSize: 12,
     fontFamily: 'Poppins-Regular',
   },
   buttonContainer: {
@@ -208,4 +250,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FeeStructureScreen;
+export default PlanStructure;

@@ -17,7 +17,7 @@ export const FeaturedServiceCard = ({heading, para}) => {
       <ImageBackground
         style={{height: '100%', width: '100%'}}
         source={{
-          uri: 'https://s3-alpha-sig.figma.com/img/ed4d/7de8/e7b0351cca7b783d4de39183480ff713?Expires=1743984000&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=E0Im5aMcL0lfCmX9GkYWp-bghISNMRskT1SW-V4Kakl~zu4hCmQT3Nhu6BsfPDEax9Z5GNiHyhzooq5ApNFhPNUjE~ag7HuJ6BayrpXtsg~H-duGPTLyVVakH~zIack0WURwa~nvhpNe-JBDstZnpkaIUWW~STaZEk8Bo5w~i4tFD1pj9cF6MfflEZ0EvzE6rWHyP-bCiVThShZGJR9EWCmtVYJAujrrHJU0TcKYpp6RDQZ-L-a2ikogmn0kpix4tCu71PCBGaDCxyM3wrHLe-fZvdXKx9E1VE4m3Ot7qlTf9ceKiKC-CZsIV1Vc2bV-4cI3T40-c644~5ZNIV-fkw__',
+          uri: 'https://s3-alpha-sig.figma.com/img/b37b/a99d/02584279da3554e04df3cb5925727ac8?Expires=1745193600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=ILEsihMsoAcnGzDDsJS4tvKtsbAtItUecZk~~6THouFgCgzm6ZJ8QTTD82sg9Hn747Mq7TFMLASQqoMPafay1U1o430B4cr9HfPKaigEGtnj3KGootUpReybyUwnqVhqq06jOpyQH-o5zZgJkzjPlClL1SGxRSDUQ06UhR2V9KUhmibfcqVt2f9INrZeSXpvFOlQDFJ9JF2DgY9npL4IIPB5dNd4lySZ7NfWPFvT5ebCavzh3YBi9-mZ9eCtgIdUXTQnDuEOMOGvlmYL1M63AqyW7EGvpQ7Tfjc5ONGGuvhufcdKlVMQN3zmmcMzLa6AL3cFydbZlj~tmtFkDHIioQ__',
         }}>
         <View
           style={{

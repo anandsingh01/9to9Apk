@@ -32,22 +32,22 @@ const Header = () => {
       <TouchableOpacity
         style={styles.menuButton}
         onPress={() => navigation.openDrawer()}>
-        <Menu name="menu" size={18} color="#000000" />
+        <Menu name="menu" size={30} color="#000" />
       </TouchableOpacity>
       <View style={styles.middleSection}>
-        <View>
+        <View style={styles.greetingContainer}>
           <Text style={styles.greetingText}>{getGreeting()}</Text>
           <Text style={styles.dateText}>{getFormattedDate()}</Text>
         </View>
         <TouchableOpacity style={styles.talkToExpertButton}>
-          <Icon name="phone" size={12} color="#571D99" />
+          <Icon name="phone" size={15} color="#571D99" />
           <Text style={styles.talkToExpertText}>Talk to Expert</Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity
         style={styles.mapButton}
         onPress={() => navigation.navigate('ReDirect')}>
-        <Icon name="map-pin" size={12} color="#571D99" />
+        <Icon name="map-pin" size={14} color="#571D99" />
       </TouchableOpacity>
     </View>
   );
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   menuButton: {
-    paddingTop: 2,
+    paddingBottom: 0,
   },
   middleSection: {
     flex: 1,
@@ -75,15 +75,24 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  greetingContainer: {
+    marginTop: 10,
+    fontFamily: 'Poppins-Regular',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    
+  },
   greetingText: {
-    fontSize: 18,
-    fontWeight: '600',
+    fontSize: 20,
+    fontWeight: '800',
     lineHeight: 22,
     marginBottom: 2,
     color: COLORS.black,
   },
   dateText: {
-    fontSize: 12,
+    fontFamily: 'Poppins-Regular',
+    fontSize: 14,
     fontWeight: '400',
     color: COLORS.gray,
   },
@@ -99,8 +108,8 @@ const styles = StyleSheet.create({
   },
   talkToExpertText: {
     color: COLORS.primary,
-    fontWeight: '500',
-    fontSize: 12,
+    fontWeight: '700',
+    fontSize: 15,
   },
   mapButton: {
     flexDirection: 'row',

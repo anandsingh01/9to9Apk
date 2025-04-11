@@ -38,6 +38,7 @@ const BannerItem = ({item}) => (
       <Text style={styles.title}>{item.title}</Text>
       <Text style={styles.subtitle}>{item.subtitle}</Text>
     </View>
+    
     <View
       style={{width: '45%', alignItems: 'flex-end', justifyContent: 'center'}}>
       <Image style={styles.image} source={AssetsStock.baby} />
